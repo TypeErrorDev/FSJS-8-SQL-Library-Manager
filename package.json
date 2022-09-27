@@ -1,29 +1,15 @@
 {
   "name": "fsjs-8-sql-library-manger",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "nodemon app.js",
-    "sass-watch": "sass --watch styles.scss:css/styles.css"
+    "start": "nodemon ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TypeErrorDev/FSJS-8-SQL-Library-Manger.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TypeErrorDev/FSJS-8-SQL-Library-Manger/issues"
-  },
-  "homepage": "https://github.com/TypeErrorDev/FSJS-8-SQL-Library-Manger#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "nodemon": "^2.0.20",
     "pug": "^3.0.2",
-    "sequelize": "^6.23.1",
-    "sequelize-cli": "^6.4.1",
+    "sequelize": "^6.23.2",
+    "sequelize-cli": "^6.5.1",
     "sqlite3": "^5.1.1"
   }
 }
