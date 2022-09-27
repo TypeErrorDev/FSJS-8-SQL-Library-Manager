@@ -1,0 +1,23 @@
+@use "../util/variables" as *;
+body {
+  padding: 10px 50px 50px;
+  font: 18px "Garamond", serif;
+}
+
+th {
+  border-bottom: 2px solid $th-border;
+  text-align: left;
+  padding: 5px 20px 5px 10px;
+}
+
+tr {
+  min-height: 50px;
+}
+
+tr:nth-child(2n) {
+  background: $white;
+}
+
+td {
+  padding: 5px 20px 5px 10px;
+}
