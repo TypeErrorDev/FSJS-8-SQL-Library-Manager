@@ -1,9 +1,9 @@
 extends layout
 
 block content  
-  h1 Books
+  h1 List of Books
   p
-    a.button(href='/newBook') Create New Book
+    a.button(href='/books/createbook') Create New Book
   table
     thead
       tr
@@ -18,4 +18,7 @@ block content
           td= book.author
           td= book.genre
           td= book.year
-  
+          td
+            a.button(href='/books/' + book.id) Edit
+            a.button(href='/deleteBook/' + book.id) Delete
+

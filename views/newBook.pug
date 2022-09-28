@@ -1,7 +1,12 @@
 extends layout
 
 block content  
-  h1 New Book
+  h1 Create A New Book!
+    if(errors)
+              h2.error Sorry! 
+              ul.error    
+                  each error in errors 
+                      li= error.message
   form
     p
       label(for='title') Title
@@ -18,4 +23,4 @@ block content
     p
       input(type='submit' value='Create New Book')
     p
-      a.button(href='all_books.html') Cancel
+      a.button(href='/') Cancel

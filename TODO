@@ -1,39 +1,15 @@
 Setup and Initialize Project
-    Meets Expectations:
-        ✔ The `.gitignore` file is in place and the `node_modules` folder is not stored in the repo @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s)
-        ✔ Running `npm install` adds all necessary dependencies @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s)
-        ✔ Running `npm start` launches the app @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s)
 
 Models
-    Meets Expectations:
-        ☐ Project includes the following Sequelize Model and properties: @started(22-09-26 07:48)
-            ☐ Book @started(22-09-26 07:48)
-                ☐ Title - `string` @started(22-09-26 07:48)
-                ☐ Author - `string` @started(22-09-26 07:48)
-                ☐ Genre - `string` @started(22-09-26 07:48)
-                ☐ Year - `integer` @started(22-09-26 07:48)
-        ☐ Uses the appropriate Model validation to ensure that the `title` and `author` properties will have values when the form is submitted @started(22-09-26 07:48)
 
 Routes
     Meets Expectations:
         ☐ Project contains at least the following routes: @started(22-09-26 07:48)
-            ☐ / - `get` @started(22-09-26 07:48)
-            ☐ /books - `get` @started(22-09-26 07:48)
-            ☐ /books/new - `get` @started(22-09-26 07:48)
             ☐ /books/new - `post` @started(22-09-26 07:48)
-            ☐ /books/:id - `get` @started(22-09-26 07:48)
             ☐ /books/:id - `post` @started(22-09-26 07:48)
             ☐ /books/:id/delete - `post` @started(22-09-26 07:48)
 
 Views
-    Meets Expectations:
-        ☐ Project contains at least the following views: @started(22-09-26 07:48)
-            ☐ layout.pug @started(22-09-26 07:48)
-            ☐ index.pug @started(22-09-26 07:48)
-            ☐ new-book.pug @started(22-09-26 07:48)
-            ☐ update-book.pug @started(22-09-26 07:48)
-            ☐ error.pug @started(22-09-26 07:48)
-            ☐ page-not-found.pug @started(22-09-26 07:48)
     
     Exceeds Expectations:
         ☐ Main book list has search feature @started(22-09-26 07:48)
@@ -50,7 +26,6 @@ Form Fields
     Meets Expectations:
         ☐ If `title` or `author` fields are empty, form will not submit and page shows friendly error message @started(22-09-26 07:48)
         ☐ Forms employ Sequelize Model validation rather than HTML's built in validation @started(22-09-26 07:48)
-        ☐ Clicking on an input's label brings focus to corresponding input @started(22-09-26 07:48)
 
 Errors
     Meets Expectations:
@@ -58,6 +33,29 @@ Errors
         ☐ If navigation to a non-existent route like `/noroute`, the project renders a user friendly "Page Not Found" page @started(22-09-26 07:48)
 
 Styles and Layout
-    Meets Expectations:
-        ☐ Project uses supplied styles @started(22-09-26 07:48)
-        ☐ General layout matches example markup pages @started(22-09-26 07:48)
+
+Archive:
+  ✔ /books/new - `get` @started(22-09-26 07:48) @done(22-09-29 00:57) @lasted(2d17h9m4s) @project(Meets Expectations)
+  ✔ The `.gitignore` file is in place and the `node_modules` folder is not stored in the repo @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s) @project(Meets Expectations)
+  ✔ Running `npm install` adds all necessary dependencies @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s) @project(Meets Expectations)
+  ✔ Running `npm start` launches the app @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s) @project(Meets Expectations)
+  ✔ Project includes the following Sequelize Model and properties: @started(22-09-26 07:48) @done(22-09-29 00:09) @lasted(2d16h21m47s) @project(Meets Expectations)
+  ✔ Book @started(22-09-26 07:48) @done(22-09-29 00:09) @lasted(2d16h21m47s) @project(Meets Expectations)
+  ✔ Title - `string` @started(22-09-26 07:48) @done(22-09-29 00:09) @lasted(2d16h21m47s) @project(Meets Expectations)
+  ✔ Author - `string` @started(22-09-26 07:48) @done(22-09-29 00:09) @lasted(2d16h21m47s) @project(Meets Expectations)
+  ✔ Genre - `string` @started(22-09-26 07:48) @done(22-09-29 00:09) @lasted(2d16h21m47s) @project(Meets Expectations)
+  ✔ Year - `integer` @started(22-09-26 07:48) @done(22-09-29 00:09) @lasted(2d16h21m47s) @project(Meets Expectations)
+  ✔ Uses the appropriate Model validation to ensure that the `title` and `author` properties will have values when the form is submitted @started(22-09-26 07:48) @done(22-09-29 00:09) @lasted(2d16h21m47s) @project(Meets Expectations)
+  ✔ / - `get` @started(22-09-26 07:48) @done(22-09-29 00:09) @lasted(2d16h21m52s) @project(Meets Expectations)
+  ✔ /books - `get` @started(22-09-26 07:48) @done(22-09-29 00:09) @lasted(2d16h21m54s) @project(Meets Expectations)
+  ✔ /books/:id - `get` @started(22-09-26 07:48) @done(22-09-29 00:09) @lasted(2d16h21m57s) @project(Meets Expectations)
+  ✔ Project contains at least the following views: @started(22-09-26 07:48) @done(22-09-29 00:10) @lasted(2d16h22m4s) @project(Meets Expectations)
+  ✔ layout.pug @started(22-09-26 07:48) @done(22-09-29 00:10) @lasted(2d16h22m4s) @project(Meets Expectations)
+  ✔ index.pug @started(22-09-26 07:48) @done(22-09-29 00:10) @lasted(2d16h22m4s) @project(Meets Expectations)
+  ✔ new-book.pug @started(22-09-26 07:48) @done(22-09-29 00:10) @lasted(2d16h22m4s) @project(Meets Expectations)
+  ✔ update-book.pug @started(22-09-26 07:48) @done(22-09-29 00:10) @lasted(2d16h22m4s) @project(Meets Expectations)
+  ✔ error.pug @started(22-09-26 07:48) @done(22-09-29 00:10) @lasted(2d16h22m4s) @project(Meets Expectations)
+  ✔ page-not-found.pug @started(22-09-26 07:48) @done(22-09-29 00:10) @lasted(2d16h22m4s) @project(Meets Expectations)
+  ✔ Clicking on åan input's label brings focus to corresponding input @started(22-09-26 07:48) @done(22-09-29 00:11) @lasted(2d16h23m21s) @project(Meets Expectations)
+  ✔ Project uses supplied styles @started(22-09-26 07:48) @done(22-09-29 00:10) @lasted(2d16h22m49s) @project(Meets Expectations)
+  ✔ General layout matches example markup pages @started(22-09-26 07:48) @done(22-09-29 00:10) @lasted(2d16h22m49s) @project(Meets Expectations)
