@@ -1,8 +1,8 @@
-var express = require("express");
-var path = require("path");
+const express = require("express");
+const path = require("path");
 const Sequelize = require("./models/index.js").sequelize;
-var indexRouter = require("./routes/index");
-var app = express();
+const indexRouter = require("./routes/index");
+const app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

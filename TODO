@@ -1,8 +1,8 @@
 Setup and Initialize Project
     Meets Expectations:
-        ☐ The `.gitignore` file is in place and the `node_modules` folder is not stored in the repo @started(22-09-26 07:48)
-        ☐ Running `npm install` adds all necessary dependencies @started(22-09-26 07:48)
-        ☐ Running `npm start` launches the app @started(22-09-26 07:48)
+        ✔ The `.gitignore` file is in place and the `node_modules` folder is not stored in the repo @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s)
+        ✔ Running `npm install` adds all necessary dependencies @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s)
+        ✔ Running `npm start` launches the app @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s)
 
 Models
     Meets Expectations:
