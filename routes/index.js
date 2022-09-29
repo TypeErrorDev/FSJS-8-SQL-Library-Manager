@@ -68,13 +68,28 @@ router.post("/books/new", async (req, res) => {
 
 // POST /books/:id - Update book info
 router.post("/books/:id", async (req, res) => {
-  const book = await Book.findByPk(req.params.id);
-  if (book) {
-    await book.update(req.body);
-    console.log("DEBUG: Successfully updated book");
-    res.redirect("/books");
-  } else {
-    res.sendStatus(404);
+  let book;
+  try {
+    book = await Book.findByPk(req.params.id);
+    if (book) {
+      await book.update(req.body);
+      console.log("DEBUG: Successfully updated book");
+      res.redirect("/books" + book.id);
+    } else {
+      res.sendStatus(404);
+    }
+  } catch (error) {
+    if (error.name === "SequelizeValidationError") {
+      book = await Book.build(req.body);
+      book.id = req.params.id;
+      res.render("updateBook", {
+        book,
+        errors: error.errors,
+        title: "Update Book",
+      });
+    } else {
+      throw error;
+    }
   }
 });
 
@@ -89,10 +104,6 @@ router.post("/books/:id/delete", async (req, res) => {
     res.sendStatus(404);
   }
 });
-
-/////////////////////////////
-//      ERROR HANDLING     //
-/////////////////////////////
 
 /////////////////////////////
 //      EXPORT ROUTER      //
