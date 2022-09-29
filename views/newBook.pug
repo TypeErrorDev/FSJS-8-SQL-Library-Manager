@@ -3,11 +3,11 @@ extends layout
 block content  
   h1 Create A New Book!
     if(errors)
-              h2.error Sorry! 
-              ul.error    
-                  each error in errors 
-                      li= error.message
-  form
+      h2.error Sorry! 
+      ul.error    
+        each error in errors 
+            li= error.message
+  form(action='/books/new', method='POST')
     p
       label(for='title') Title
       input#title(name='title' type='text')
