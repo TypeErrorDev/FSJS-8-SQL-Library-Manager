@@ -4,10 +4,10 @@ Models
 
 Routes
     Meets Expectations:
-        ☐ Project contains at least the following routes: @started(22-09-26 07:48)
-            ☐ /books/new - `post` @started(22-09-26 07:48)
-            ☐ /books/:id - `post` @started(22-09-26 07:48)
-            ☐ /books/:id/delete - `post` @started(22-09-26 07:48)
+        ✔ Project contains at least the following routes: @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s)
+            ✔ /books/new - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s)
+            ✔ /books/:id - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s)
+            ✔ /books/:id/delete - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s)
 
 Views
     

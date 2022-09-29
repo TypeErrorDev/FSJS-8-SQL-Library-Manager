@@ -27,7 +27,7 @@ router.get("/books", async (req, res) => {
 // GET /books/new - Show the create new book form
 router.get("/books/createbook", async (req, res) => {
   console.log("DEBUG: You are in the /books/createbook route");
-  res.render("newBook", { Book, title: "Create New Book" });
+  res.render("newBook", { Book, title: "Create A New Book" });
 });
 
 // GET /books/:id - Show book detail form
@@ -50,11 +50,16 @@ router.post("/books/new", async (req, res) => {
   let book;
   try {
     book = await Book.create(req.body);
-    res.redirect(`/books/${book.id}`);
+    console.log("DEBUG: You are in the /books/new route");
+    res.redirect(`/books`);
   } catch (error) {
     if (error.name === "SequelizeValidationError") {
       book = await Book.build(req.body);
-      res.render("new-book", { book, errors: error.errors, title: "New Book" });
+      res.render("newBook", {
+        book,
+        errors: error.errors,
+        title: "Create A New Book",
+      });
     } else {
       throw error;
     }
@@ -66,6 +71,7 @@ router.post("/books/:id", async (req, res) => {
   const book = await Book.findByPk(req.params.id);
   if (book) {
     await book.update(req.body);
+    console.log("DEBUG: Successfully updated book");
     res.redirect("/books");
   } else {
     res.sendStatus(404);
@@ -77,10 +83,19 @@ router.post("/books/:id/delete", async (req, res) => {
   const book = await Book.findByPk(req.params.id);
   if (book) {
     await book.destroy();
+    console.log("DEBUG: Successfully ran the delete route");
     res.redirect("/books");
   } else {
     res.sendStatus(404);
   }
 });
+
+/////////////////////////////
+//      ERROR HANDLING     //
+/////////////////////////////
+
+/////////////////////////////
+//      EXPORT ROUTER      //
+/////////////////////////////
 
 module.exports = router;

@@ -29,9 +29,6 @@ app.use("/", indexRouter);
   try {
     await Sequelize.sync();
     await Sequelize.authenticate();
-    console.log(
-      "Connection with the Database has been established successfully."
-    );
   } catch (error) {
     console.error("Error connecting to the database: ", error);
   }
