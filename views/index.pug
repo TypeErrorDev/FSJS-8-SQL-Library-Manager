@@ -1,6 +1,12 @@
 extends layout
 
 block content  
+
+ p 
+  form(action='/books/search' class='form')
+    input#query(type='search' name='q' placeholder='Search...')
+    a.button Search
+
   h1 List of Books
   p
     a.button(href='/books/createbook') Create New Book
@@ -19,3 +25,11 @@ block content
           td= book.author
           td= book.genre
           td= book.year
+
+    p.pagination                
+      - let i = 0;
+      while i < numOfPages
+        if(q)
+          a(class="pagination-button" href=`/books/search?q=${q}&page=${++ i}`) #{ i }
+        else
+          a(class="pagination-button" href=`/books?page=${++ i}`) #{i}

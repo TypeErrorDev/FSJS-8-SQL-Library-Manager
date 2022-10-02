@@ -7,19 +7,19 @@ block content
       ul.error    
         each error in errors 
             li= error.message
-  form(action='/books/new', method='POST')
+  form(action='/books/createbook', method='POST')
     p
-      label(for='title') Title
-      input#title(name='title' type='text')
+    label(for='title') Title
+    input#title(name='title' type='text' value=title)
     p
       label(for='author') Author
-      input#author(name='author' type='text')
+      input#author(name='author' type='text' value=author)
     p
       label(for='genre') Genre
-      input#genre(name='genre' type='text')
+      input#genre(name='genre' type='text' value=genre)
     p
       label(for='year') Year
-      input#year(name='year' type='text')
+      input#year(name='year' type='text' value=year)
     p
       input(type='submit' value='Create New Book')
     p

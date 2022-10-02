@@ -10,13 +10,13 @@ const Book = require("../models").Book;
 //      GET Requests       //
 /////////////////////////////
 
-// GET / - Home route redirects to /listOfBooks
+// GET / - Home route redirects to /books
 router.get("/", (req, res) => {
   console.log("DEBUG: Redirect to /books");
-  res.redirect("/books");
+  res.redirect("books");
 });
 
-// GET /books - Show the full list of books
+// GET /books - Show the full library of books
 router.get("/books", async (req, res) => {
   const books = await Book.findAll();
   console.log("DEBUG: You are in the /books route");
@@ -24,10 +24,10 @@ router.get("/books", async (req, res) => {
   res.render("index", { books, title: "Books" });
 });
 
-// GET /books/new - Show the create new book form
+// GET /books/createbook - Show the create new book form
 router.get("/books/createbook", async (req, res) => {
   console.log("DEBUG: You are in the /books/createbook route");
-  res.render("newBook", { Book, title: "Create A New Book" });
+  res.render("newBook", { Book });
 });
 
 // GET /books/:id - Show book detail form
@@ -45,20 +45,22 @@ router.get("/books/:id", async (req, res) => {
 //      POST REQUESTS      //
 /////////////////////////////
 
-// POST /books/new - Create a new book
-router.post("/books/new", async (req, res) => {
+// POST /books/createbook - Create a new book
+router.post("/books/createbook", async (req, res) => {
   let book;
   try {
     book = await Book.create(req.body);
-    console.log("DEBUG: You are in the /books/new route");
-    res.redirect(`/books`);
+    res.redirect(`/`);
   } catch (error) {
     if (error.name === "SequelizeValidationError") {
       book = await Book.build(req.body);
       res.render("newBook", {
         book,
         errors: error.errors,
-        title: "Create A New Book",
+        title: book.title,
+        author: book.author,
+        genre: book.genre,
+        year: book.year,
       });
     } else {
       throw error;
@@ -74,7 +76,7 @@ router.post("/books/:id", async (req, res) => {
     if (book) {
       await book.update(req.body);
       console.log("DEBUG: Successfully updated book");
-      res.redirect("/books" + book.id);
+      res.redirect("/books/" + book.id);
     } else {
       res.sendStatus(404);
     }
@@ -85,7 +87,8 @@ router.post("/books/:id", async (req, res) => {
       res.render("updateBook", {
         book,
         errors: error.errors,
-        title: "Update Book",
+        title: book.title,
+        author: book.author,
       });
     } else {
       throw error;
