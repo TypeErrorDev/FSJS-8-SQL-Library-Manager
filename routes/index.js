@@ -112,29 +112,6 @@ router.post("/books/:id/delete", async (req, res) => {
 });
 
 /////////////////////////////
-//   ERROR MIDDLEWARE      //
-/////////////////////////////
-router.use((req, res, next) => {
-  console.log("DEBUG: You've hit the error catch");
-  const err = new Error("Generic Error: Page Not Found");
-  res.status(404);
-  next(err);
-});
-
-router.use((err, req, res) => {
-  if (err) {
-    if (err.status === 404) {
-      console.log("DEBUG: THIS IS THE 404 ERROR");
-      res.render("pageNotFound", err.message, { err });
-    } else if (err.status === 500) {
-      err.message = "My apologies! Seems I've misplaced my server!";
-      console.log("DEBUG: THIS IS THE 500 ERROR");
-      res.render("error500", { err });
-    }
-  }
-});
-
-/////////////////////////////
 //      EXPORT ROUTER      //
 /////////////////////////////
 
