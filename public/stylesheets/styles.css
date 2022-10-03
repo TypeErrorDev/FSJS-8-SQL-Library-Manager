@@ -38,6 +38,12 @@ input[type=submit] {
   font-size: 1rem;
 }
 
+.errorPageStack {
+  color: red;
+  font-kerning: auto;
+  font-size: 1rem;
+}
+
 body {
   padding: 10px 50px 50px;
   font: 18px "Garamond", serif;
