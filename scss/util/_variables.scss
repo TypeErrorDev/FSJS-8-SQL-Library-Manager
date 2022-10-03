@@ -1,6 +1,12 @@
+@use "functions" as *;
+
 // COLORS variables
 $error: rgb(236, 15, 15);
 $hover: #01b189;
 $white: #e7e7e7;
 $links: #019875;
 $th-border: #d8b493;
+
+// FONTS variables
+$errorMainText: rem(25);
+$errorAltText: rem(16);

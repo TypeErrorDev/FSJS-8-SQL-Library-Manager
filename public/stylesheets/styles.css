@@ -9,7 +9,7 @@ a:hover {
   color: black;
 }
 
-a.button, input[type=submit] {
+input[type=submit] {
   color: #e7e7e7;
   background: #019875;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -21,6 +21,21 @@ a.button, input[type=submit] {
 
 .error {
   color: rgb(236, 15, 15);
+}
+
+.errorPageTitle {
+  color: rgb(236, 15, 15);
+  font-size: 1.5625rem;
+}
+
+.errorPageMsg {
+  color: rgb(236, 15, 15);
+  font-size: 1rem;
+}
+
+.errorPageText {
+  color: green;
+  font-size: 1rem;
 }
 
 body {
@@ -46,7 +61,18 @@ td {
   padding: 5px 20px 5px 10px;
 }
 
-form a.button, input[type=submit] {
+a.button {
+  color: #e7e7e7;
+  background: #019875;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 10px 14px 12px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+form a.button,
+input[type=submit] {
   margin-left: 140px;
   transition: 0.4s;
 }
@@ -55,7 +81,8 @@ input[type=submit] {
   border: 0;
 }
 
-a.button:hover, input[type=submit]:hover {
+a.button:hover,
+input[type=submit]:hover {
   background-color: #01b189;
 }
 
@@ -66,7 +93,8 @@ label {
   transition: 0.4s;
 }
 
-input {
+input,
+#query {
   padding: 10px;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 14px;

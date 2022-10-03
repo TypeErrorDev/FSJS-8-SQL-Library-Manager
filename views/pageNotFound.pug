@@ -1,8 +1,9 @@
-doctype html
-head
-  title Page Not Found
-  link(rel='stylesheet' href='../public/stylesheets/style.css')
-h1 Server Error
-p Sorry! There was an unexpected error on the server.
+extends layout 
 
-a(href="/books") Return to the home page
+block content
+
+  h1.errorPageTitle 404 Error - Page Not Found
+    p.errorPageMsg Sorry! Please check the URL and try again.
+    p.errorPageStack error.stack
+
+  a(href="/") Back

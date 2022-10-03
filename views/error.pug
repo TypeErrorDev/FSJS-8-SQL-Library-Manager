@@ -1,6 +1,10 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.statusText
-  pre error.stack
+  h1.errorPageTitle Sorry! There was an unexpected (500) error on the server.
+  h2.errorPageMsg= message
+  h2.errorPageText= error.statusText
+    p.errorPageStack= error.stack
+
+  p
+    a.button(href='/') Back

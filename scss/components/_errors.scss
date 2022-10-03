@@ -3,3 +3,15 @@
 .error {
   color: $error;
 }
+.errorPageTitle {
+  color: $error;
+  font-size: $errorMainText;
+}
+.errorPageMsg {
+  color: $error;
+  font-size: $errorAltText;
+}
+.errorPageText {
+  color: green;
+  font-size: $errorAltText;
+}
