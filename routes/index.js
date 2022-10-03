@@ -66,7 +66,7 @@ router.post("/books/createbook", async (req, res) => {
         year: book.year,
       });
     } else {
-      throw error;
+      next();
     }
   }
 });

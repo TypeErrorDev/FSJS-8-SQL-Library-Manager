@@ -40,7 +40,7 @@ app.use("/", indexRouter);
 app.use((req, res, next) => {
   console.log("DEBUG: You've hit the error catch");
   const err = new Error("Generic Error: Page Not Found");
-  res.status(404);
+
   next(err);
 });
 
@@ -48,10 +48,12 @@ app.use((err, req, res) => {
   if (err) {
     if (err.status === 404) {
       console.log("DEBUG: THIS IS THE 404 ERROR");
+      res.status = 404;
       res.render("pageNotFound", err.message, { err });
     } else if (err.status === 500) {
       err.message = "My apologies! Seems I've misplaced my server!";
       console.log("DEBUG: THIS IS THE 500 ERROR");
+      res.status = 500;
       res.render("error500", { err });
     }
   }

@@ -3,6 +3,7 @@ extends layout
 block content
   h1.errorPageTitle= error.status + ' Error - ' + error.message
   h2.errorPageText= error.statusText
+  div.errorPageStackContainer
     p.errorPageStack= error.stack
 
   p

@@ -38,6 +38,12 @@ input[type=submit] {
   font-size: 1rem;
 }
 
+.errorPageStackContainer {
+  outline: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
 .errorPageStack {
   color: red;
   font-kerning: auto;
