@@ -38,9 +38,9 @@ router.get("/books/:id", async (req, res, next) => {
     console.log("DEBUG: You are in the /books/:id route");
     res.render("updateBook", { book, title: book.title });
   } else {
-    const err = new Error("Holy Smokes, this is a 404 Error");
-    res.sendStatus(404);
-    // next(err);
+    // const err = new Error("Holy Smokes, this is a 404 Error");
+    // err.status = 404;
+    next();
   }
 });
 
@@ -107,28 +107,29 @@ router.post("/books/:id/delete", async (req, res) => {
     console.log("DEBUG: Successfully ran the delete route");
     res.redirect("/books");
   } else {
-    res.sendStatus(404);
+    // res.sendStatus(404);
   }
 });
 
 /////////////////////////////
 //   ERROR MIDDLEWARE      //
 /////////////////////////////
-router.use(function (err, req, res) {
-  res.locals.message = err.message;
-  res.locals.error = req.router.get("env") === "development" ? err : {};
-  res.status(err.status || 500);
-  res.render("pageNotFound");
+router.use((req, res, next) => {
+  console.log("DEBUG: You've hit the error catch");
+  const err = new Error("Generic Error: Page Not Found");
+  res.status(404);
+  next(err);
 });
 
 router.use((err, req, res) => {
   if (err) {
     if (err.status === 404) {
-      res.status(404);
-      render(err.message, { err });
-    } else {
+      console.log("DEBUG: THIS IS THE 404 ERROR");
+      res.render("pageNotFound", err.message, { err });
+    } else if (err.status === 500) {
       err.message = "My apologies! Seems I've misplaced my server!";
-      res.status(500).render("pageNotFound", { err });
+      console.log("DEBUG: THIS IS THE 500 ERROR");
+      res.render("error500", { err });
     }
   }
 });
