@@ -102,13 +102,9 @@ router.post("/books/:id", async (req, res) => {
 // POST /books/:id/delete - Delete a book
 router.post("/books/:id/delete", async (req, res) => {
   const book = await Book.findByPk(req.params.id);
-  if (book) {
-    await book.destroy();
-    console.log("DEBUG: Successfully ran the delete route");
-    res.redirect("/books");
-  } else {
-    // res.sendStatus(404);
-  }
+  await book.destroy();
+  console.log("DEBUG: Successfully ran the delete route");
+  res.redirect("/books");
 });
 
 /////////////////////////////
