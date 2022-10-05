@@ -3,16 +3,11 @@ Setup and Initialize Project
 Models
 
 Routes
-    Meets Expectations:
-        ✔ Project contains at least the following routes: @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s)
-            ✔ /books/new - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s)
-            ✔ /books/:id - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s)
-            ✔ /books/:id/delete - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s)
 
 Views
     
     Exceeds Expectations:
-        ☐ Main book list has search feature @started(22-09-26 07:48)
+        ✔ Main book list has search feature @started(22-09-26 07:48) @done(22-10-04 21:23) @lasted(1w1d13h35m15s)
         ☐ Search works for all of the following fields @started(22-09-26 07:48)
             ☐ Title @started(22-09-26 07:48)
             ☐ Author @started(22-09-26 07:48)
@@ -23,18 +18,20 @@ Views
         ☐ Main book list has pagination feature @started(22-09-26 07:48)
 
 Form Fields
-    Meets Expectations:
-        ☐ If `title` or `author` fields are empty, form will not submit and page shows friendly error message @started(22-09-26 07:48)
-        ☐ Forms employ Sequelize Model validation rather than HTML's built in validation @started(22-09-26 07:48)
 
 Errors
-    Meets Expectations:
-        ☐ If routing to a non-existent book id, project uses a `global error handler` to render a friendly "Page Not Found" or "error" page @started(22-09-26 07:48)
-        ☐ If navigation to a non-existent route like `/noroute`, the project renders a user friendly "Page Not Found" page @started(22-09-26 07:48)
 
 Styles and Layout
 
 Archive:
+  ✔ Project contains at least the following routes: @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s) @project(Meets Expectations)
+  ✔ /books/new - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s) @project(Meets Expectations)
+  ✔ /books/:id - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s) @project(Meets Expectations)
+  ✔ /books/:id/delete - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s) @project(Meets Expectations)
+  ✔ If `title` or `author` fields are empty, form will not submit and page shows friendly error message @started(22-09-26 07:48) @done(22-10-04 21:22) @lasted(1w1d13h34m34s) @project(Meets Expectations)
+  ✔ Forms employ Sequelize Model validation rather than HTML's built in validation @started(22-09-26 07:48) @done(22-10-04 21:22) @lasted(1w1d13h34m34s) @project(Meets Expectations)
+  ✔ If routing to a non-existent book id, project uses a `global error handler` to render a friendly "Page Not Found" or "error" page @started(22-09-26 07:48) @done(22-10-04 21:22) @lasted(1w1d13h34m20s) @project(Meets Expectations)
+  ✔ If navigation to a non-existent route like `/noroute`, the project renders a user friendly "Page Not Found" page @started(22-09-26 07:48) @done(22-10-04 21:22) @lasted(1w1d13h34m20s) @project(Meets Expectations)
   ✔ /books/new - `get` @started(22-09-26 07:48) @done(22-09-29 00:57) @lasted(2d17h9m4s) @project(Meets Expectations)
   ✔ The `.gitignore` file is in place and the `node_modules` folder is not stored in the repo @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s) @project(Meets Expectations)
   ✔ Running `npm install` adds all necessary dependencies @started(22-09-26 07:48) @done(22-09-28 11:13) @lasted(2d3h25m1s) @project(Meets Expectations)

@@ -22,9 +22,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 
 /////////////////////////////
-//     ERROR FUNCTIONS     //
+//  SEQUELIZE CONNECTION   //
 /////////////////////////////
-// catch 404 and forward to error handler
+
 (async () => {
   try {
     await Sequelize.sync();
@@ -33,6 +33,10 @@ app.use("/", indexRouter);
     console.error("Error connecting to the database: ", error);
   }
 })();
+
+/////////////////////////////
+//     SEARCH FUNCTION     //
+/////////////////////////////
 
 /////////////////////////////
 //     ERROR HANDLING      //
