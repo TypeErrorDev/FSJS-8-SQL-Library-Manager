@@ -47,24 +47,18 @@ app.use((req, res, next) => {
 });
 
 // error handler
-app.use((err, req, res) => {
-  if (err) {
-    if (err.status === 404) {
-      console.log("DEBUG: THIS IS THE 404 ERROR");
-      res.render("error404", err.message, { err });
-    } else if (err.status === 500) {
-      err.message = "My apologies! Seems I've misplaced my server!";
-      console.log("DEBUG: THIS IS THE 500 ERROR");
-      res.render("error500", { err });
-    }
+app.use((err, req, res, next) => {
+  if (err.status === 404) {
+    console.log("DEBUG: THIS IS THE 404 ERROR");
+    err.status = 404;
+    err.message = "Sorry, Page Not Found. Please Turn Off and Back On Again";
+    res.status(err.status).render("error", { error: err });
+  } else {
+    err.status = 500;
+    err.message = "My apologies! Seems I've misplaced my server!";
+    console.log("DEBUG: THIS IS THE 500 ERROR");
+    res.status(err.status).render("error", { error: err });
   }
 });
-
-// app.use(function (err, req, res, next) {
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get("env") === "development" ? err : {};
-//   // render the page
-//   res.render("error500");
-// });
 
 module.exports = app;

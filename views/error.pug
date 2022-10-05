@@ -2,8 +2,8 @@ extends layout
 
 block content
 
-  h1.errorPageTitle 404 Error - Page Not Found
-  p.errorPageMsg Sorry! Please check the URL and try again.
+  h1.errorPageTitle= error.status 
+  p.errorPageMsg= error.message
   div.errorPageStackContainer
     p.errorPageStack= error.stack
 
