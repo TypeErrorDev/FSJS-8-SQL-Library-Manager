@@ -7,7 +7,6 @@ Routes
 Views
     
     Exceeds Expectations:
-        ✔ Main book list has search feature @started(22-09-26 07:48) @done(22-10-04 21:23) @lasted(1w1d13h35m15s)
         ☐ Search works for all of the following fields @started(22-09-26 07:48)
             ☐ Title @started(22-09-26 07:48)
             ☐ Author @started(22-09-26 07:48)
@@ -24,6 +23,7 @@ Errors
 Styles and Layout
 
 Archive:
+  ✔ Main book list has search feature @started(22-09-26 07:48) @done(22-10-04 21:23) @lasted(1w1d13h35m15s) @project(Exceeds Expectations)
   ✔ Project contains at least the following routes: @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s) @project(Meets Expectations)
   ✔ /books/new - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s) @project(Meets Expectations)
   ✔ /books/:id - `post` @started(22-09-26 07:48) @done(22-09-29 15:30) @lasted(3d7h42m19s) @project(Meets Expectations)
