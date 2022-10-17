@@ -35,69 +35,6 @@ app.use("/", indexRouter);
 })();
 
 /////////////////////////////
-//     SEARCH FUNCTION     //
-/////////////////////////////
-//Pagination
-app.get("/books", async (req, res) => {
-  const { count, rows } = await Book.findAndCountAll();
-  const displayNumber = 5;
-
-  let index; //index of the array - used for the offset to see up to what range of books you want to see
-  let numberOfPages = Math.ceil(count / displayNumber); // creates the pages on the bottom of the screen (number of rows / how many items per page)
-  let pageSelected = req.query.page; // Is the selected page number
-
-  //index starts off with zero unless a page is clicked
-  if (index || pageSelected) {
-    index = pageSelected - 1; // Page Number user selected
-  } else {
-    index = 0;
-  }
-
-  //Sets up Page Numbers
-  if (numberOfPages < displayNumber) {
-    const books = await Book.findAll({
-      limit: 5,
-      offset: index * displayNumber,
-    });
-    res.render("index", { books, title: "Books", numberOfPages });
-  } else {
-    const books = await Book.findAll({ limit: 5, offset: index });
-    res.render("index", { books, title: "Books", numberOfPages });
-  }
-});
-//
-//Shows the full list of books
-app.post("/books", async (req, res) => {
-  const searchQuery = req.body.query;
-
-  if (!searchQuery) {
-    // if no value is entered redirect to the main list
-    res.redirect("/books");
-  }
-
-  const books = await Book.findAll({
-    where: {
-      [Op.or]: {
-        title: {
-          [Op.like]: `%${searchQuery}%`,
-        },
-        author: {
-          [Op.like]: `%${searchQuery}%`,
-        },
-        genre: {
-          [Op.like]: `%${searchQuery}%`,
-        },
-        year: {
-          [Op.like]: `%${searchQuery}%`,
-        },
-      },
-    }, // end of where clause
-  });
-
-  res.render("index", { books, title: "Books" });
-});
-
-/////////////////////////////
 //     ERROR HANDLING      //
 /////////////////////////////
 
