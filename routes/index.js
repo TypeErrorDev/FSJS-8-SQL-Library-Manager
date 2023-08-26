@@ -79,7 +79,7 @@ router.post("/books/:id", async (req, res) => {
     if (book) {
       await book.update(req.body);
       console.log("DEBUG: Successfully updated book");
-      res.redirect("/books/" + book.id);
+      res.redirect("/");
     } else {
       res.sendStatus(404);
     }
